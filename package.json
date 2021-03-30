@@ -1,0 +1,25 @@
+{
+  "name": "nextjs-news",
+  "version": "1.0.0",
+  "description": "News build on NextJS",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imtoor/nextjs-news.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imtoor/nextjs-news/issues"
+  },
+  "homepage": "https://github.com/imtoor/nextjs-news#readme",
+  "dependencies": {
+    "next": "^10.1.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
