@@ -4,7 +4,6 @@ import Router from 'next/router';
 import NProgress from 'nprogress';
 
 Router.onRouteChangeStart = url => {
-    console.log(url);
     NProgress.start();
 }
 
@@ -35,7 +34,7 @@ function Header() {
                     <div className="b-logo">
                         <Link href="/">
                         <a>
-                            <img src="static/img/logo.png" alt="Logo" />
+                            <img src="/static/img/logo.png" alt="Logo" />
                         </a>
                         </Link>
                     </div>
