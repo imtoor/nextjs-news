@@ -52,7 +52,7 @@ export default function News() {
 
     useEffect(() => {
         fetch(
-            `http://localhost/gatsby-news/admin/api/news.php?slug=all&limit=6`
+            `http://localhost/gatsby-news/admin/api/related_news.php?kategori=6&limit=6`
         ).then(async (res) => {
             const response = await res.json();
             if (response !== undefined) {
