@@ -97,7 +97,7 @@ TopNewsRight(img, slug, linkText) {
         <div className="col-md-6">
             <div className="tn-img">
                 {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                <Image src={img} alt={img} width={1200} height={1000} />
+                <Image src={img} alt={img} width={1200} height={945} />
                 <div className="tn-title">
                     <Link href={`news/${slug}`}>
                         <a>{linkText}</a>
