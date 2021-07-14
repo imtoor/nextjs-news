@@ -37,6 +37,7 @@ export default function News() {
                 if (response !== undefined) {
                     if (response.status && response.data.length > 0) {
                         response.data.map((item) => {
+                            getRelatedNews(item.kategori_id, setRelatedNews);
                             setNews((prevState) => [...prevState, item]);
                         })
                     } else {
@@ -50,22 +51,23 @@ export default function News() {
             });
     }, []);
 
-    useEffect(() => {
+    const getRelatedNews = (kategori, setRelatedNews) => {
         fetch(
-            `http://localhost/gatsby-news/admin/api/related_news.php?kategori=6&limit=6`
+          `http://localhost/gatsby-news/admin/api/related_news.php?kategori=${kategori}&limit=6`
         ).then(async (res) => {
-            const response = await res.json();
-            if (response !== undefined) {
-                if (response.status && response.data.length > 0) {
-                    response.data.map((item) => {
-                        setRelatedNews((prevState) => [...prevState, item]);
-                    })
-                }
-            } else {
-                setRelatedNews((prevState) => [...prevState, []]);
+          const response = await res.json();
+          if (response !== undefined) {
+            if (response.status && response.data.length > 0) {
+              // eslint-disable-next-line array-callback-return
+              response.data.map((item) => {
+                setRelatedNews((prevState) => [...prevState, item]);
+              });
             }
+          } else {
+            setRelatedNews((prevState) => [...prevState, []]);
+          }
         });
-    }, []);
+      };
 
     return (
         <Layout>
